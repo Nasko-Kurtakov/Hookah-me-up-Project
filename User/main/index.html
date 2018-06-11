@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hookah me up</title>
+    <link href="../../libs/external/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../../libs/external/css/scrolling-nav.css" rel="stylesheet">
+    <link href="./index.css" rel="stylesheet">
+  </head>
+  <body id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Hookah Me Up</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#home">Начало</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#ourOffers">Нашите предложения</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#doItYourself">Направи си сам</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contacts">Контакти</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="../basket/basket.html">Кошница
+                  <div class="basket-size" data-bind="visible: $data.basket().length > 0, text: $data.basket().length"></div>
+              </a>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="bg-primary text-white">
+      <div class="container text-center">
+        <h1>Hookah Me Up</h1>
+        <p class="lead">Hookahs for your home</p>
+      </div>
+    </header>
+
+    <section id="home">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Начало</h2>
+            <p class="lead">Това е чудесно място да запознаем клиента с наргиле бара</p>
+            <ul>
+              <li>Тук можем да поставим лист с нещата,</li>
+              <li>които бара предлага</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ourOffers" class="bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Нашите предложения</h2>
+            <p class="lead">
+                Тук ще има слайдер със снимки и линкове за поръчка.
+                Няколко реда за различни категории. 
+                Например нови предложения, най-поръчвани.
+              <div class="row">
+                <div class="col-md-12 mx-auto">
+                  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+                    <ol class="carousel-indicators">
+                      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                      <div class="carousel-item active">
+                          <div class="row">
+                          <!--ko foreach:$data.predefinedChoices.slice(0,3)-->
+                              <div class="col-md-4 item-order">
+                                  <div class="item-img">
+                                      <img class="d-block img-fluid" data-bind="attr:{'src': $data.imgPath, alt:$data.name }">
+                                  </div>
+                                  <div class="item-oreder-view text-center">
+                                      <a class="btn btn-primary" role="button" data-bind="click: function(){ $parent.addToBasket($data)}">Добави в кошницата</a>
+                                  </div>
+                              </div>
+                          <!--/ko-->
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="row">
+                            <!--ko foreach:$data.predefinedChoices.slice(3,6)-->
+                            <div class="col-md-4 item-order">
+                                <div class="item-img">
+                                    <img class="d-block img-fluid" data-bind="attr:{'src': $data.imgPath, alt:$data.name }">
+                                </div>
+                                <div class="item-oreder-view text-center">
+                                    <a class="btn btn-primary" role="button">Добави в кошницата</a>
+                                </div>
+                            </div>
+                            <!--/ko-->
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="row">
+                            <!--ko foreach:$data.predefinedChoices.slice(6,9)-->
+                            <div class="col-md-4 item-order">
+                                <div class="item-img">
+                                    <img class="d-block img-fluid" data-bind="attr:{'src': $data.imgPath, alt:$data.name }">
+                                </div>
+                                <div class="item-oreder-view text-center">
+                                    <a class="btn btn-primary" role="button">Добави в кошницата</a>
+                                </div>
+                            </div>
+                            <!--/ko-->
+                        </div>
+                      </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
+                </div>
+              </div>                
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="doItYourself">
+      <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2>Направи си сам</h2>
+                <div class="row">
+                    <!-- ko with: $data.customHookahVM-->
+                    <div class="col-md-6 do-yourself-acordeon-container" id="accordion">
+                        <div class="card">
+                            <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                            aria-expanded="true" aria-controls="collapseOne">
+                                        Чашка
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                 data-parent="#accordion">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <span class="col-xs-4">
+                                            <input id="cup1" value="$parent.cups[0]" data-bind="checked: cup" type="radio" name="cup">
+                                            <label for="cup1" class="radio-inline"  data-bind="text:$parent.cups[0]"></label>
+                                        </span>
+                                    </div>
+                                    <div class="row">
+                                        <span class="col-xs-4 radio-inline">
+                                            <input id="cup2" value="$parent.cups[1]" data-bind="checked: cup" type="radio" name="cup">
+                                            <label for="cup2" data-bind="text:$parent.cups[1]"></label>
+                                        </span>
+                                        <span class="col-xs-4 radio-inline">
+                                            <input id="cup3" value="$parent.cups[2]" data-bind="checked: cup" type="radio" name="cup">
+                                            <label for="cup3" data-bind="text:$parent.cups[2]"></label>
+                                        </span>
+                                        <span class="col-xs-4 radio-inline">
+                                            <input id="cup4" value="$parent.cups[3]" data-bind="checked: cup" type="radio" name="cup">
+                                            <label for="cup4" data-bind="text:$parent.cups[3]"></label>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#collapseTwo" aria-expanded="false"
+                                            aria-controls="collapseTwo">
+                                        Вкус #1
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                 data-parent="#accordion">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-4 radio-inline">
+                                            <input id="firstTabac1" data-bind="checkedValue:$parent.tabacs[0], checked: tabac1" type="radio" name="tabac1">
+                                            <label for="firstTabac1" data-bind="text:$parent.tabacs[0]"></label>
+                                        </div>
+                                        <div class="col-xs-4 radio-inline">
+                                            <input id="firstTabac2" data-bind="checkedValue:$parent.tabacs[1], checked: tabac1" type="radio" name="tabac1">
+                                            <label for="firstTabac2" data-bind="text:$parent.tabacs[1]"></label>
+                                        </div>
+                                        <div class="col-md-4 radio-inline">
+                                            <input id="firstTabac3" data-bind="checkedValue:$parent.tabacs[2], checked: tabac1" type="radio" name="tabac1">
+                                            <label for="firstTabac3" data-bind="text:$parent.tabacs[2]"></label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 radio-inline">
+                                            <input id="firstTabac4" data-bind="checkedValue:$parent.tabacs[3], checked: tabac1" type="radio" name="tabac1">
+                                            <label for="firstTabac4" data-bind="text:$parent.tabacs[3]"></label>
+                                        </div>
+                                        <div class="col-xs-4 radio-inline">
+                                            <input id="firstTabac5" data-bind="checkedValue:$parent.tabacs[4], checked: tabac1" type="radio" name="tabac1">
+                                            <label for="firstTabac5" data-bind="text:$parent.tabacs[4]"></label>
+                                        </div>
+                                        <div class="col-md-4 radio-inline">
+                                            <input id="firstTabac6" data-bind="checkedValue:$parent.tabacs[5], checked: tabac1" type="radio" name="tabac1">
+                                            <label for="firstTabac6" data-bind="text:$parent.tabacs[5]"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#collapseThree" aria-expanded="false"
+                                            aria-controls="collapseThree">
+                                        Вкус #2
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                 data-parent="#accordion">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-4 radio-inline">
+                                            <input id="secondTabac1" data-bind="checkedValue:$parent.tabacs[0], checked: tabac2" type="radio" name="tabac2">
+                                            <label for="secondTabac1" data-bind="text:$parent.tabacs[0]"></label>
+                                        </div>
+                                        <div class="col-xs-4 radio-inline">
+                                            <input id="secondTabac2" data-bind="checkedValue:$parent.tabacs[1], checked: tabac2" type="radio" name="tabac2">
+                                            <label for="secondTabac2" data-bind="text:$parent.tabacs[1]"></label>
+                                        </div>
+                                        <div class="col-md-4 radio-inline">
+                                            <input id="secondTabac3" data-bind="checkedValue:$parent.tabacs[2], checked: tabac2" type="radio" name="tabac2">
+                                            <label for="secondTabac3" data-bind="text:$parent.tabacs[2]"></label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 radio-inline">
+                                            <input id="secondTabac4" data-bind="checkedValue:$parent.tabacs[3], checked: tabac2" type="radio" name="tabac2">
+                                            <label for="secondTabac4" data-bind="text:$parent.tabacs[3]"></label>
+                                        </div>
+                                        <div class="col-xs-4 radio-inline">
+                                            <input id="secondTabac5" data-bind="checkedValue:$parent.tabacs[4], checked: tabac2" type="radio" name="tabac2">
+                                            <label for="secondTabac5" data-bind="text:$parent.tabacs[4]"></label>
+                                        </div>
+                                        <div class="col-md-4 radio-inline">
+                                            <input id="secondTabac6" data-bind="checkedValue:$parent.tabacs[5], checked: tabac2" type="radio" name="tabac2">
+                                            <label for="secondTabac6" data-bind="text:$parent.tabacs[5]"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingFour" data-toggle="collapse" data-target="#collapseFour">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#collapseFour" aria-expanded="false"
+                                            aria-controls="collapseFour">
+                                        Охлаждане
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                 data-parent="#accordion">
+                                <div class="card-body">
+                                    <div>Добави лед в вазата за по-гъст дим</div>
+                                    <div class="row add-ice">
+                                        <label class="col-lg-6 radio-inline"><input data-bind="checked: isAddedIce" value="true" type="radio" name="ice">Да</label>
+                                        <label class="col-lg-6 radio-inline"><input data-bind="checked: isAddedIce" value="false" type="radio" name="ice">Не</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingFive" data-toggle="collapse" data-target="#collapseFive">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#collapseFive" aria-expanded="false"
+                                            aria-controls="collapseFive">
+                                        Маркуч
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                                 data-parent="#accordion">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <label class="col-lg-6 radio-inline"><input data-bind="checked: hosesNum" value="1" type="radio" name="hose">С един маркуч</label>
+                                        <label class="col-lg-6 radio-inline"><input data-bind="checked: hosesNum" value="2" type="radio" name="hose">С два маркуча</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /ko -->
+                    <div class="col-md-6">
+                        <div>
+                            Снимка на наргиле и различните вкусове. Може да скриваме картинката, когато дисплея е
+                            по-малък.
+                        </div>
+                        <div class="text-center">
+                            <a class="btn btn-primary" role="button" data-bind="click: addToBasketCustomHookah">Добави в кошницата</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts" class="bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <h2>Контакти</h2>
+              <p class="lead">Секция "за нас", където може да поставим facebook на наргиле бара, телефон.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Hookah Masters @ FMI</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <script src="../../libs/external/vendor/jquery/jquery.min.js"></script>
+    <script src="../../libs/external/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="../../libs/external/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="../../libs/external/js/scrolling-nav.js"></script>
+    <script src="../../libs/external/js/knockout-3.4.2.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+.requred-field:after {
+    content: " *";
+    color: red;
+}
+
+textarea {
+    resize: none;
+}
+
+.inner-group {
+    padding-left: 20px;
+}
+
+.col-count {
+    width:10%;
+    text-align: center;
+}
+
+.col-desc {
+    width:80%;
+}
+
+.col-remove {
+    width:10%;
+}
+
+.td-vertical-align {
+    line-height: 20px;
+    vertical-align: middle !important;
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hookah me up Basket</title>
+    <link href="../../libs/external/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!--<link href="../libs/external/clockpicker/bootstrap-addon.css" rel="stylesheet">-->
+    <link href="../../libs/external/clockpicker/bootstrap-clockpicker.css" rel="stylesheet">
+    <link href="../../libs/external/css/scrolling-nav.css" rel="stylesheet">
+    <link href="../main/index.css" rel="stylesheet">
+    <link href="./basket.css" rel="stylesheet">
+  </head>
+  <body id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="../main/index.html">Hookah Me Up</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#basket">Поръчка</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="bg-primary text-white">
+      <div class="text-center">
+        <h3>Hookah me up</h3>
+        <p class="lead">The system for ordering hookah for your home</p>
+      </div>
+    </header>
+
+    <section id="home">
+      <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <h2>Информация за доставката</h2>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="requred-field" for="firstName">Име</label>
+                            <input data-bind="value:$data.orderInfo.name" required type="text" class="form-control" id="firstName" placeholder="Вашето име">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="requred-field" for="famName">Фамилия</label>
+                            <input data-bind="value: $data.orderInfo.lastName" required type="text" class="form-control" id="famName" placeholder="Вашата Фамилия">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="requred-field" for="address">Адрес</label>
+                        <input data-bind="value: $data.orderInfo.address" required type="text" class="form-control" id="address" placeholder="Попълнете Вашия адрес">
+                    </div>
+                    <div class="form-group">
+                        <label for="city">Град</label>
+                        <input data-bind="value:$data.orderInfo.city" readonly type="text" class="form-control" id="city">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="requred-field" for="phone">Телефон</label>
+                            <input required class="form-control" data-bind="value: $data.orderInfo.phone" id="phone" placeholder="Вашият телефон">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="email">Имейл адрес</label>
+                            <input type="email" class="form-control" data-bind="value: $data.orderInfo.email" id="email" placeholder="e-mail">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" data-bind="value:$data.orderInfo.comment" placeholder="Коментар"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Промо код</label>
+                        <input type="text" class="form-control" id="code" data-bind="$data.orderInfo.promoCode" placeholder="Въведи своя промо код">
+                    </div>
+                    <!--ko with: $data.orderInfo.payment-->
+                    <div class="form-group">
+                        <label>Начин на плащане</label>
+                        <div class="form-row inner-group">
+                            <div class="form-group">
+                                <div class="credit-cards-container ">
+                                    <img src="../../libs/img/payment-methods.png" alt="Методи за плащане">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label class="requred-field" for="card-holder-name">Име</label>
+                                        <input required class="form-control" id="card-holder-name" placeholder="Име">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="requred-field" for="card-holder-lastname">Фамилия</label>
+                                        <input type="text" class="form-control" id="card-holder-lastname" placeholder="Фамилия">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="requred-field" for="address">Номер на карта</label>
+                                    <input required type="text" class="form-control" id="address" placeholder="Номер на карта">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-8">
+                                        <label class="requred-field" for="expiryDate">Дата на изтичане</label>
+                                        <input required class="form-control" id="expiryDate" placeholder="MM / YY">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label class="requred-field" for="cvc">CV Code</label>
+                                        <input type="text" class="form-control" id="cvc" placeholder="CVC">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ko-->
+                    <div class="form-group">
+                        <div>Час за връщане</div>
+                        <div class="input-group clockpicker" data-placement="right" data-align="top" data-autoclose="true">
+                            <input type="text" class="form-control" data-bind="$data.orderInfo.timePickup" placeholder="">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-time"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block" type="submit">Поръчай</button>
+                </form>
+            </div>
+            <div class="col-lg-5">
+                <h2 class="text-center">Вашата поръчка</h2> 
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="col-count" scope="col">#</th>
+                            <th class="col-desc" scope="col">Описание</th>
+                            <th class="col-price" scope="col"></th>
+                            <th class="col-remove" scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--ko foreach: $data.items -->
+                            <tr>
+                                <td class="td-vertical-align" data-bind="text: $data.count"></td>
+                                <td>
+                                    <ul>
+                                        <!--ko foreach: Object.keys($data.desc) -->
+                                            <li data-bind="text: ($data + ' - ' + $parent.desc[$data])"></li>
+                                        <!--/ko-->
+                                    </ul>
+                                </td>
+                                <td>
+                                    <div data-bind="text: ($data.count*$data.price)+ 'лв.'"></div>
+                                </td>
+                                <td class="td-vertical-align">
+                                    <button type="button" class="btn btn-danger"
+                                            data-bind="click:function(){ $parent.remove($index())}">X</button>
+                                </td>
+                            </tr>
+                        <!--/ko-->
+                    </tbody>
+                </table>
+                <div>
+                    <span>Total </span><span data-bind="text: $data.getTotal() + 'лв.'"></span>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Hookah Masters @ FMI</p>
+      </div>
+    </footer>
+    <script src="../../libs/external/vendor/jquery/jquery.min.js"></script>
+    <script src="../../libs/external/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../libs/external/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../../libs/external/js/scrolling-nav.js"></script>
+    <script src="../../libs/external/clockpicker/bootstrap-clockpicker.js"></script>
+    <script src="../../libs/external/js/knockout-3.4.2.js"></script>
+    <script type="text/javascript" src="./basket.js"></script>
+  </body>
+</html>

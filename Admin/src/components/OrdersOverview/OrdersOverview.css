@@ -1,0 +1,13 @@
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px !important;
+    }
+}
+
+.info-container {
+    margin-bottom: 40px;
+}
+
+.send-container{
+    text-align: right;
+}

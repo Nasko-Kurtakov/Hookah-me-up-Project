@@ -1,0 +1,77 @@
+.do-yourself-acordeon-container{
+    padding: 0px;
+}
+
+.carousel-indicators {
+    bottom:-30px;
+}
+
+.carousel-indicators .active {
+    background-color: yellow;
+}
+
+.carousel-indicators li {
+    background-color: yellow;
+}
+
+.carousel-control-prev {
+    left: -85px;
+}
+
+.carousel-control-next {
+    right: -85px;
+}
+
+.carousel-control-prev-icon{
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E")
+}
+
+.item-img {
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.item-oreder-view {
+    left: 15px;
+    padding: 40% 0px;
+    background-color: #5f5e5e87;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: calc(100% - 30px);
+    height: 100%;
+}
+
+.item-order:hover .item-oreder-view {
+    opacity: 1;
+}
+
+input[type="radio"] {
+    margin: 8px;
+}
+
+.cup-fruits label {
+    margin-left: 15px;
+}
+.basket-size {
+    width: 22px;
+    line-height: 22px;
+    border-radius: 50%;
+    text-align: center;
+    display: inline-block;
+    background-color: red;
+    color: white;
+}
+
+header {
+    /*background-image: url("../../libs/img/slider_3.jpg");*/
+}
+
+#home{
+    /*background-image: url("../../libs/img/slider_3.jpg");*/
+}
