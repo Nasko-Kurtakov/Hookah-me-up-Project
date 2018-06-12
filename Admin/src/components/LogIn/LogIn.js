@@ -30,7 +30,6 @@ class LoginView extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        console.log(this.props);
         this.props.loginSuccessfull();
     };
 

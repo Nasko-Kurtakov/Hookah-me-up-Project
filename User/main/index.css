@@ -2,16 +2,78 @@
     padding: 0px;
 }
 
+header {
+    background-image: url("../../libs/img/slider_3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+}
+
+@media screen and (min-height: 720px){
+    header {
+        height: 350px;
+    }
+}
+
+#home{
+    background: url("../../libs/img/bg-14.jpg");
+    /*margin-top: -100px;*/
+    background-size: cover;
+}
+
+#ourOffers{
+    background: url("../../libs/img/bg-12.jpg") no-repeat center;
+    background-size: cover;
+}
+
+#contacts {
+    background: url("../../libs/img/bg_footer.png") no-repeat center;
+    background-size:cover;
+    height: 100px;
+
+}
+
+#doItYourself {
+    background: url("../../libs/img/contacts.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.DoItYourself{
+    border-color: white;
+    border: solid;
+    border-width: 15px;
+    padding: 15px;
+
+}
+
+.backImg{
+    background-image: url("../../libs/img/do2.png");
+    background-repeat: none;
+    padding: 15px;
+}
+
+
+.nargile{
+    max-width: 100%;
+
+}
+.full-width-image {
+    height: 300px;
+    width: 100%;
+    background: url("../../libs/img/cover.jpg") no-repeat center fixed;
+    background-size: cover;
+}
+
 .carousel-indicators {
     bottom:-30px;
 }
 
 .carousel-indicators .active {
-    background-color: yellow;
+    background-color: #1e1413;
 }
 
 .carousel-indicators li {
-    background-color: yellow;
+    background-color: #1e1413;
 }
 
 .carousel-control-prev {
@@ -68,10 +130,6 @@ input[type="radio"] {
     color: white;
 }
 
-header {
-    /*background-image: url("../../libs/img/slider_3.jpg");*/
-}
-
-#home{
-    /*background-image: url("../../libs/img/slider_3.jpg");*/
+#accordion .card-header {
+    padding: 5px 12px;
 }

@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Switch} from 'react-router-dom';
 
 import {Navigation} from '../Navigation/Navigation';
 import {OrdersOverview} from '../OrdersOverview/OrdersOverview'
-import {Button, PropsRoute} from '../utils/utils';
+import {PropsRoute} from '../utils/utils';
 import "./LoggedInView.css"
+import {TakeBackView} from "../TakeBackView/TakeBackView";
 
 export class LoggedInView extends Component{
 
     componentWillMount(){
-        const newLocation = window.location.origin+'/';
-        window.history.pushState({loggedIn:true}, "Logged In View", newLocation);
+        // const newLocation = window.location.origin+'/';
+        // window.location.href = newLocation;
+        // window.history.pushState({loggedIn:true}, "Logged In View", newLocation);
     }
 
     render(){
@@ -20,7 +22,8 @@ export class LoggedInView extends Component{
                     <Navigation/>
                     <Switch>
                         <PropsRoute path="/" exact component={OrdersOverview}/>
-                        <PropsRoute path={"/#view1"} component={OrdersOverview}/>
+                        <PropsRoute exact path={"/newOrders"} component={OrdersOverview}/>
+                        <PropsRoute exact path={"/sentOrders"} component={TakeBackView}/>
                     </Switch>
                 </div>
             </BrowserRouter>

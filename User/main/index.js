@@ -3,9 +3,9 @@
         basket: ko.observableArray([]),
         cups:["Глина","Ананас","Ябълка","Портокал"],
         tabacs:["Лимон","Шоколад","Мента","Мохито","Портокал","Ягода"],
-        predefinedChoices:[{name:"1",imgPath:"./libs/img/img.png"},{name:"2",imgPath:"./libs/img/img.png"},{name:"3",imgPath:"./libs/img/img.png"},
-            {name:"4",imgPath:"./libs/img/img.png"},{name:"5",imgPath:"./libs/img/img.png"},{name:"6",imgPath:"./libs/img/img.png"},
-            {name:"7",imgPath:"./libs/img/img.png"},{name:"8",imgPath:"./libs/img/img.png"},{name:"9",imgPath:"./libs/img/img.png"}],
+        predefinedChoices:[{name:"1",imgPath:"../../libs/img/taste/apples2.jpg"},{name:"2",imgPath:"../../libs/img/taste/cocos.jpg"},{name:"3",imgPath:"../../libs/img/taste/nar.jpg"},
+            {name:"4",imgPath:"../../libs/img/taste/grape.jpg"},{name:"5",imgPath:"../../libs/img/taste/strawberries2.jpg"},{name:"6",imgPath:"../../libs/img/taste/susheniPlodove.jpg"},
+            {name:"7",imgPath:"../../libs/img/taste/appricot.jpg"},{name:"8",imgPath:"../../libs/img/taste/fig.jpg"},{name:"9",imgPath:"../../libs/img/taste/peach2.jpg"}],
         addToBasket: function (item) {
             this.basket.push(item);
         },
@@ -28,7 +28,6 @@
             isAddedIce: ko.observable(false),
             hosesNum: ko.observable(1)
         }
-
     };
 
     ko.applyBindings(customerVM);

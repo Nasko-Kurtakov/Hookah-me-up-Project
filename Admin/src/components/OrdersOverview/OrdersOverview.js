@@ -5,7 +5,9 @@ import {Table} from "../Table/Table";
 import {GoogleMap} from "../GoogleMap/GoogleMap"
 import {Button} from "../utils/utils";
 
-const statuses = {
+import "./OrdersOverview.css";
+
+export const statuses = {
     received:"приет",
     delivered:"доставен",
     takenBack:"върнат"
@@ -68,12 +70,13 @@ export class OrdersOverview extends Component {
 
     render(){
         var selected=this.state.selectedOrder;
+        const items = this.getOrders().filter(oreder=>oreder.status === statuses.received);
         return(
             <section id="home">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6 pull-left">
-                            <Table headers={["id","description","status"]} selectRow={this.changeSelection} items={this.getOrders()}/>
+                            <Table headers={["id","description","status"]} selectRow={this.changeSelection} items={items}/>
                         </div>
                         <div className="col-lg-6 pull-right">
                             <div className="row">

@@ -22,7 +22,7 @@ export class Table extends Component {
     getBody(){
         const headers = this.headers;
         const selectRow = this.props.selectRow;
-        return this.items.map((item,index)=>{
+        return this.props.items.map((item,index)=>{
             const tds = headers.map(header=> <td key={header}>{item[header]}</td>);
             return <tr onClick={(e)=> selectRow(item)} key={index}>{tds}</tr>
         });

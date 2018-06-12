@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-// import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
-
-import { Button } from '../utils/utils'
-
 import './Navigation.css';
 
 export class Navigation extends Component {
@@ -18,15 +14,14 @@ export class Navigation extends Component {
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
-                            <a className="nav-link js-scroll-trigger" href="#view1">View 1</a>
+                            <a className="nav-link js-scroll-trigger" href="/newOrders">Нови поръчки</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link js-scroll-trigger" href="#view2">View 2</a>
+                            <a className="nav-link js-scroll-trigger" href="/sentOrders">Изпратени поръчки</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>);
     }
-
 }

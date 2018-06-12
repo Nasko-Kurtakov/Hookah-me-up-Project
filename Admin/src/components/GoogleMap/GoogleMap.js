@@ -1,7 +1,6 @@
 import React from 'react';
 import { compose, withProps } from "recompose"
-// import {FaAnchor} from "react-icons/lib/fa/anchor"
-import { withScriptjs, withGoogleMap, GoogleMap as GMap, Marker, InfoWindow } from "react-google-maps"
+import { withScriptjs, withGoogleMap, GoogleMap as GMap, Marker } from "react-google-maps"
 import "./GoogleMap.css"
 
 const MapComponent = compose(
@@ -24,9 +23,15 @@ const MapComponent = compose(
 );
 
 const addresses = {
-    "Студентски град бл. 52 вх. Б":{lat:42.646595, lng:23.337258},
-    "Ivan Vazov Blok 26":{lat:42.676387, lng:23.308116},
-    "ж.к. Младост 3 Blok 7":{lat:42.643537, lng:23.375257}
+    "Студентски град бл. 42 вх. Б":{lat: 42.659595, lng: 23.337258},
+    "Студентски град бл. 52 вх. Б": {lat: 42.646595, lng: 23.337258},
+    "Ivan Vazov Blok 26": {lat: 42.676387, lng: 23.308116},
+    "ж.к. Младост 3 Blok 7": {lat: 42.643537, lng: 23.375257},
+    "жк. Гоце Делчев №420": {lat:42.664172, lng:23.298820},
+    "Гео Милев 777": {lat:42.678912, lng:23.359692},
+    "Овча Купел Блок 17": {lat:42.675696, lng:23.258608},
+    "жк. Стрелбище блок 20 Д": {lat:42.674179, lng:23.297586},
+    "Младост 1 ул. Върбичка №3": {lat:42.651185, lng: 23.379186}
 };
 
 export class GoogleMap extends React.PureComponent {

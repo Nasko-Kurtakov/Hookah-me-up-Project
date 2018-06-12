@@ -16,12 +16,14 @@ export class Main extends Component{
     }
 
     logIn = ()=> {
+        sessionStorage.setItem('isLoggedIn',true);
         this.setState({isLoggedIn:true});
     };
 
     render(){
-        // return !this.state.isLoggedIn ? <LogIn loginSuccessfull={this.logIn} /> : <LoggedInView/>;
-        return (<LoggedInView/>);
+        const isLoggedIn = JSON.parse(sessionStorage.getItem('isLoggedIn'));
+        return !isLoggedIn ? <LogIn loginSuccessfull={this.logIn} /> : <LoggedInView/>;
+        // return (<LoggedInView/>);
     }
 }
 
