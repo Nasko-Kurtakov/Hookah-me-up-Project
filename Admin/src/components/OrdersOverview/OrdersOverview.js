@@ -18,40 +18,53 @@ export class OrdersOverview extends Component {
     constructor(props){
         super(props);
         this.orders = [{
-            id:"3",
-            description:"Наргиле с банан и мента",
-            contacts:{
-                phoneNumber:"0899342517",
-                address:"Ivan Vazov Blok 26",
-                names:"Петър Иванов"
+            "№":"1",
+            "описание":"Праскова",
+            "контакти":{
+                "номер":"0899342517",
+                "адрес":"Студентски град бл. 42 вх. Б",
+                "имена":"Георги Минков"
             },
-            comment:"обадете ми се",
-            status:statuses.received
+            "час на връщане":"18:10",
+            "коментар":"",
+            "статус":statuses.received
         },{
-            id:"1",
-            description:"Наргиле с банан и мента",
-            contacts:{
-                phoneNumber:"0899342517",
-                address:"ж.к. Младост 3 Blok 7",
-                names:"Иван Иванов"
+            "№":"2",
+            "описание":"Наргиле с мента",
+            "контакти":{
+                "номер":"0899343184",
+                "адрес":"жк. Гоце Делчев №420",
+                "имена":"Иван Стоилов"
             },
-            comment:"обадете ми се",
-            status:statuses.received
+            "час на връщане":"18:00",
+            "коментар":"",
+            "статус":statuses.received
         },{
-            id:"2",
-            description:"Наргиле с банан и мента",
-            contacts:{
-                phoneNumber:"0899342517",
-                address:"Студентски град бл. 52 вх. Б",
-                names:"Георги Иванов"
+            "№":"3",
+            "описание":"Наргиле ябълка и банан",
+            "контакти":{
+                "номер":"0899331252",
+                "адрес":"Гео Милев 777",
+                "имена":"Петър Иванов"
             },
-            comment:"обадете ми се",
-            status:statuses.received
+            "час на връщане":"19:15",
+            "коментар":"моля не палете въглените преди доставка",
+            "статус":statuses.received
+        },{
+            "№":"4",
+            "описание":"Наргиле с банан и мента",
+            "контакти":{
+                "номер":"08993024515",
+                "адрес":"Овча Купел Блок 17",
+                "имена":"Георги Иванов"
+            },
+            "час на връщане":"16:50",
+            "коментар":"искам по-голямо наргиле",
+            "статус":statuses.received
         }];
 
         this.getOrders = this.getOrders.bind(this);
         this.state={selectedOrder:this.orders[0]};
-        // this.selectedOrder=this.orders[0]
     }
 
     getOrders(){
@@ -60,7 +73,7 @@ export class OrdersOverview extends Component {
 
     sendSelectedOrder(){
         var selected=this.state.selectedOrder;
-        selected.status=statuses.delivered;
+        selected["статус"]=statuses.delivered;
         this.setState({selectedOrder:selected});
     }
 
@@ -70,13 +83,13 @@ export class OrdersOverview extends Component {
 
     render(){
         var selected=this.state.selectedOrder;
-        const items = this.getOrders().filter(oreder=>oreder.status === statuses.received);
+        const items = this.getOrders().filter(oreder=>oreder["статус"] === statuses.received);
         return(
             <section id="home">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6 pull-left">
-                            <Table headers={["id","description","status"]} selectRow={this.changeSelection} items={items}/>
+                            <Table headers={["№","описание","статус"]} selectRow={this.changeSelection} items={items}/>
                         </div>
                         <div className="col-lg-6 pull-right">
                             <div className="row">
@@ -85,15 +98,19 @@ export class OrdersOverview extends Component {
                                         <h4>Информация за поръчката</h4>
                                         <div>
                                             <span>Имена: </span>
-                                            <span>{selected.contacts.names}</span>
+                                            <span>{selected["контакти"]["имена"]}</span>
                                         </div>
                                         <div>
                                             <span>Адрес: </span>
-                                            <span>{selected.contacts.address}</span>
+                                            <span>{selected["контакти"]["адрес"]}</span>
                                         </div>
                                         <div>
                                             <span>Телефон: </span>
-                                            <span>{selected.contacts.phoneNumber}</span>
+                                            <span>{selected["контакти"]["номер"]}</span>
+                                        </div>
+                                        <div>
+                                            <span>Коментар за доставчика: </span>
+                                            <span>{selected["коментар"]}</span>
                                         </div>
                                         <div className="send-container">
                                             <Button text="Изпрати" className="btn-success" onClick={()=>this.sendSelectedOrder()}/>
@@ -101,7 +118,7 @@ export class OrdersOverview extends Component {
                                     </div>
                                 </div>
                                 <div className="col-md-12">
-                                    <GoogleMap order={selected.contacts} isMarkerShown />
+                                    <GoogleMap order={selected["контакти"]} isMarkerShown />
                                 </div>
                             </div>
                         </div>

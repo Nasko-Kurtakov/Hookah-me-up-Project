@@ -12,7 +12,7 @@
 <body id="page-top">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Hookah Me Up</a>
+        <a class="navbar-brand js-scroll-trigger" style="font-family: 'Yeseva One'" href="#page-top">Hookah Me Up</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -40,7 +40,7 @@
     <div class="container">
         <div>
             <h1>Hookah Me Up</h1>
-            <p class="lead">Hookahs for your home</p>
+            <p class="lead" style="font-size: 1.5rem">Наргилета за вкъщи</p>
         </div>
     </div>
 </header>
@@ -49,26 +49,32 @@
     <div class="container" class="homeSection">
         <div class="row">
             <div class="col-lg-8 mx-auto">
-                <h2>Начало</h2>
-                <p class="lead">Това е чудесно място да запознаем клиента с наргиле бара</p>
-                <ul>
-                    <li>Тук можем да поставим лист с нещата,</li>
-                    <li>които бара предлага</li>
-                </ul>
+                <h2>Как работи?</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <img class="img-home" src="../../libs/img/1.png" alt="step1">
+                        <p class="lead"> Изберете своето наргиле от нашите предложения или си направете сами</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img class="img-home" src="../../libs/img/2.png" alt="step2">
+                        <p class="lead"> Получете го и му се насладете </p>
+                    </div>
+                    <div class="col-md-4">
+                        <img class="img-home" src="../../libs/img/3.png" alt="step3">
+                        <p class="lead"> Върнете го в удобно за вас време </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 <section id="ourOffers" class="bg-light">
-    <div class="container">
+    <div class="container pageStyle">
         <div class="row">
             <div class="col-lg-8 mx-auto">
                 <h2>Нашите предложения</h2>
-                <p class="lead">
-                    Тук ще има слайдер със снимки и линкове за поръчка.
-                    Няколко реда за различни категории.
-                    Например нови предложения, най-поръчвани.
+                <p class="lead"> Най-популярните ни готови предложения, всяко на цена от 20лв.
                 <div class="row">
                     <div class="col-md-12 mx-auto">
                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
@@ -145,7 +151,6 @@
                 <div class="col-lg-8 mx-auto">
                     <h2>Направи си сам</h2>
                     <div class="row">
-
                         <div class="col-md-6 do-yourself-acordeon-container" id="accordion">
                             <!-- ko with: $data.customHookahVM-->
                             <div class="card">
@@ -284,7 +289,7 @@
                                 <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
                                      data-parent="#accordion">
                                     <div class="card-body">
-                                        <div>Добави лед в вазата за по-гъст дим</div>
+                                        <div>Добави лед във вазата за по-гъст дим</div>
                                         <div class="row add-ice">
                                             <label class="col-lg-6 radio-inline"><input data-bind="checked: isAddedIce" value="true" type="radio" name="ice">Да</label>
                                             <label class="col-lg-6 radio-inline"><input data-bind="checked: isAddedIce" value="false" type="radio" name="ice">Не</label>
@@ -317,7 +322,6 @@
                                 <a class="btn float-lg-none text-white btn-dark" role="button" data-bind="click: addToBasketCustomHookah">Добави в кошницата</a>
                             </div>
                         </div>
-
                         <div class="col-md-6">
                             <div class="nargile">
                                 <img src="../../libs/img/nargile1.png" alt="">

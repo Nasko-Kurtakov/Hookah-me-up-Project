@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import "./Table.css"
+
 const flatten = (arr)=>{
     return arr.reduce((acc, val) => Array.isArray(val) ? acc.concat(flatten(val)) : acc.concat(val), []);
 };
@@ -30,7 +32,7 @@ export class Table extends Component {
 
     render(){
         return (
-            <table className="table table-bordered table-hover">
+            <table className="table table-bordered table-hover table-striped">
                 <thead>{this.getHeaders()}</thead>
                 <tbody>{this.getBody()}</tbody>
             </table>

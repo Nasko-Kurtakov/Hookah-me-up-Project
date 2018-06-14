@@ -1,4 +1,29 @@
 .center-content{
-    justify-content: center;
+    /*justify-content: center;*/
     text-align: center;
+}
+
+.view-container{
+    background-image: url("img/slider_3.jpg");
+    height: 100%;
+    background-size: cover;
+}
+html, body, #root, #app>div {
+    height: 100%
+}
+
+h1{
+    font-family: "Yaseva One";
+}
+
+label {
+    font-family: "Trebuchet MS";
+}
+
+h1, label {
+    color:#f8f9fa;
+}
+
+.login-holder{
+    margin-top: 12em;
 }

@@ -2,28 +2,44 @@
     padding: 0px;
 }
 
-header {
-    background-image: url("../../libs/img/slider_3.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 500px;
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: "Yeseva One";
+    margin-bottom: 1rem;
+    font-size: 3rem;
 }
 
-@media screen and (min-height: 720px){
-    header {
-        height: 350px;
-    }
+.h1,h1{
+    font-size: 4rem;
+    margin-top: 2em;
+}
+
+.img-home{
+    width: 100%;
+    height: auto;
+    margin-top: 2em;
+}
+
+header {
+    background: url("../../libs/img/slider_3.jpg") no-repeat center;
+    background-size: cover;
+    height: 750px;
 }
 
 #home{
     background: url("../../libs/img/bg-14.jpg");
-    /*margin-top: -100px;*/
     background-size: cover;
 }
 
 #ourOffers{
     background: url("../../libs/img/bg-12.jpg") no-repeat center;
     background-size: cover;
+}
+
+.pageStyle{
+    border-color: #17161b;
+    border-style: solid;
+    border-width: 15px;
+    padding: 100px;
 }
 
 #contacts {
@@ -47,7 +63,7 @@ header {
 }
 
 .backImg{
-    background-image: url("../../libs/img/do2.png");
+    background-image: url("../../libs/img/doIt.jpg");
     background-repeat: none;
     padding: 15px;
 }

@@ -6,7 +6,7 @@ export class Navigation extends Component {
     render(){
        return (<nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
             <div className="container">
-                <a className="navbar-brand js-scroll-trigger" href="#page-top">Hookah Me Up</a>
+                <a className="navbar-brand js-scroll-trigger navbar-header" href="#page-top">Hookah Me Up</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>

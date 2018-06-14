@@ -14,65 +14,71 @@ export class TakeBackView extends Component {
     constructor(props){
         super(props);
         this.orders = [{
-            id:"1",
-            description:"Праскова",
-            contacts:{
-                phoneNumber:"0899342517",
-                address:"Студентски град бл. 42 вх. Б",
-                names:"Георги Минков"
+            "№":"1",
+            "описание":"Праскова",
+            "контакти":{
+                "номер":"0899342517",
+                "адрес":"Студентски град бл. 42 вх. Б",
+                "имена":"Георги Минков"
             },
-            comment:"",
-            status:statuses.delivered
+            "час на връщане":"18:10",
+            "коментар":"",
+            "статус":statuses.delivered
         },{
-            id:"2",
-            description:"Наргиле с мента",
-            contacts:{
-                phoneNumber:"0899343184",
-                address:"жк. Гоце Делчев №420",
-                names:"Иван Стоилов"
+            "№":"2",
+            "описание":"Наргиле с мента",
+            "контакти":{
+                "номер":"0899343184",
+                "адрес":"жк. Гоце Делчев №420",
+                "имена":"Иван Стоилов"
             },
-            comment:"",
-            status:statuses.delivered
+            "час на връщане":"18:00",
+            "коментар":"",
+            "статус":statuses.delivered
         },{
-            id:"3",
-            description:"Наргиле ябълка и банан",
-            contacts:{
-                phoneNumber:"0899331252",
-                address:"Гео Милев 777",
-                names:"Петър Иванов"
+            "№":"3",
+            "описание":"Наргиле ябълка и банан",
+            "контакти":{
+                "номер":"0899331252",
+                "адрес":"Гео Милев 777",
+                "имена":"Петър Иванов"
             },
-            comment:"моля не палете въглените преди доставка",
-            status:statuses.delivered
+            "час на връщане":"19:15",
+            "коментар":"моля не палете въглените преди доставка",
+            "статус":statuses.delivered
         },{
-            id:"4",
-            description:"Наргиле с банан и мента",
-            contacts:{
-                phoneNumber:"08993024515",
-                address:"Овча Купел Блок 17",
-                names:"Георги Иванов"
+            "№":"4",
+            "описание":"Наргиле с банан и мента",
+            "контакти":{
+                "номер":"08993024515",
+                "адрес":"Овча Купел Блок 17",
+                "имена":"Георги Иванов"
             },
-            comment:"искам по-голямо наргиле",
-            status:statuses.delivered
+            "час на връщане":"16:50",
+            "коментар":"искам по-голямо наргиле",
+            "статус":statuses.delivered
         },{
-            id:"5",
-            description:"Наргиле с череши",
-            contacts:{
-                phoneNumber:"0899042745",
-                address:"жк. Стрелбище блок 20 Д",
-                names:"Иванка Стоилова"
+            "№":"5",
+            "описание":"Наргиле с череши",
+            "контакти":{
+                "номер":"0899042745",
+                "адрес":"жк. Стрелбище блок 20 Д",
+                "имена":"Иванка Стоилова"
             },
-            comment:"",
-            status:statuses.delivered
+            "час на връщане":"17:00",
+            "коментар":"",
+            "статус":statuses.delivered
         },{
-            id:"6",
-            description:"Наргиле с грозде",
-            contacts:{
-                phoneNumber:"0899190325",
-                address:"Младост 1 ул. Върбичка №3",
-                names:"Елизабет Жечева"
+            "№":"6",
+            "описание":"Наргиле с грозде",
+            "контакти":{
+                "номер":"0899190325",
+                "адрес":"Младост 1 ул. Върбичка №3",
+                "имена":"Елизабет Жечева"
             },
-            comment:"обадете ми се",
-            status:statuses.delivered
+            "час на връщане":"19:30",
+            "коментар":"обадете ми се",
+            "статус":statuses.delivered
         }];
 
         this.getOrders = this.getOrders.bind(this);
@@ -96,13 +102,13 @@ export class TakeBackView extends Component {
     render(){
         var selected=this.state.selectedOrder;
         var statuses = orderStatuses;
-        const items = this.getOrders().filter(oreder=> oreder.status === statuses.delivered);
+        const items = this.getOrders().filter(oreder=> oreder["статус"] === statuses.delivered);
         return(
             <section id="home">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6 pull-left">
-                            <Table headers={["id","description","status"]} selectRow={this.changeSelection} items={items}/>
+                            <Table headers={["№","описание","статус","час на връщане"]} selectRow={this.changeSelection} items={items}/>
                         </div>
                         <div className="col-lg-6 pull-right">
                             <div className="row">
@@ -111,15 +117,15 @@ export class TakeBackView extends Component {
                                         <h4>Информация за поръчката</h4>
                                         <div>
                                             <span>Имена: </span>
-                                            <span>{selected.contacts.names}</span>
+                                            <span>{selected["контакти"]["имена"]}</span>
                                         </div>
                                         <div>
                                             <span>Адрес: </span>
-                                            <span>{selected.contacts.address}</span>
+                                            <span>{selected["контакти"]["адрес"]}</span>
                                         </div>
                                         <div>
                                             <span>Телефон: </span>
-                                            <span>{selected.contacts.phoneNumber}</span>
+                                            <span>{selected["контакти"]["номер"]}</span>
                                         </div>
                                         <div className="send-container">
                                             <Button text="Отбележи върнат" className="btn-success" onClick={()=>this.takeBackSelectedOrder()}/>
@@ -127,7 +133,7 @@ export class TakeBackView extends Component {
                                     </div>
                                 </div>
                                 <div className="col-md-12">
-                                    <GoogleMap order={selected.contacts} isMarkerShown />
+                                    <GoogleMap order={selected["контакти"]} isMarkerShown />
                                 </div>
                             </div>
                         </div>

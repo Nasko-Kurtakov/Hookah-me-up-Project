@@ -61,8 +61,8 @@ export class GoogleMap extends React.PureComponent {
     };
 
     render() {
-        const markerText = this.order.names;
-        const markerPos=addresses[this.order.address];
+        const markerText = this.order["имена"];
+        const markerPos=addresses[this.order["адрес"]];
         return (
             <MapComponent
                 markerText={markerText}

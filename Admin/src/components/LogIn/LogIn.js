@@ -37,7 +37,7 @@ class LoginView extends Component {
     render() {
         return (
             <div className="Login">
-                <h3>Hookah-me-up Login</h3>
+                <h1>Login</h1>
                 <form onSubmit={this.handleSubmit}>
                     <FormGroup controlId="username">
                         <ControlLabel>Потребителско име</ControlLabel>
@@ -51,7 +51,7 @@ class LoginView extends Component {
                             type="password"
                         />
                     </FormGroup>
-                    <Button disabled={!this.validateForm()} type="submit" className="btn-outline-primary btn-block" text="Влез"/>
+                    <Button disabled={!this.validateForm()} type="submit" className="btn-light btn-block" text="Влез"/>
                     {/*<Button disabled={!this.validateForm()} block type="submit">Login</Button>*/}
                 </form>
             </div>
@@ -66,7 +66,7 @@ class LogInWrapper extends Component{
             <section id="logIn-section">
                 <div className="container">
                     <div className="row center-content">
-                        <div className="col-lg-7">
+                        <div className="login-holder col-md-4">
                             <LoginView {...this.props} />
                         </div>
                     </div>
@@ -84,7 +84,7 @@ export class LogIn extends Component {
     render(){
         return (
             <BrowserRouter>
-            <div>
+            <div className="view-container">
                 <Switch>
                     <PropsRoute path="/" exact component={LogInWrapper} loginSuccessfull={this.props.loginSuccessfull} />
                     <PropsRoute path="/login" exact component={LogInWrapper} loginSuccessfull={this.props.loginSuccessfull} />

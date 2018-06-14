@@ -11,3 +11,7 @@
 .send-container{
     text-align: right;
 }
+
+#home {
+    background-image: url("../shared/img/bg-12.jpg");
+}
