@@ -91,7 +91,7 @@ export class TakeBackView extends Component {
 
     takeBackSelectedOrder(){
         var selected=this.state.selectedOrder;
-        selected.status=statuses.takenBack;
+        selected["статус"]=statuses.takenBack;
         this.setState({selectedOrder:selected});
     }
 

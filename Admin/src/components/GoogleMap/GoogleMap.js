@@ -26,7 +26,7 @@ const addresses = {
     "Студентски град бл. 42 вх. Б":{lat: 42.659595, lng: 23.337258},
     "Студентски град бл. 52 вх. Б": {lat: 42.646595, lng: 23.337258},
     "Ivan Vazov Blok 26": {lat: 42.676387, lng: 23.308116},
-    "ж.к. Младост 3 Blok 7": {lat: 42.643537, lng: 23.375257},
+    "ж.к. Младост 3 Blok 7": {lat: 42.643537, lng: 23.385257},
     "жк. Гоце Делчев №420": {lat:42.664172, lng:23.298820},
     "Гео Милев 777": {lat:42.678912, lng:23.359692},
     "Овча Купел Блок 17": {lat:42.675696, lng:23.258608},
@@ -49,9 +49,9 @@ export class GoogleMap extends React.PureComponent {
     }
 
     delayedShowMarker = () => {
-        // setTimeout(() => {
-        //     this.setState({ isMarkerShown: true });
-        // }, 3000)
+        setTimeout(() => {
+            this.setState({ isMarkerShown: true });
+        }, 3000)
     };
 
     toggleMarker = () => {
