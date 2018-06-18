@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Switch} from 'react-router-dom';
+import {BrowserRouter, Switch, HashRouter} from 'react-router-dom';
 import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 
 import {Button, PropsRoute} from '../utils/utils';
@@ -52,7 +52,6 @@ class LoginView extends Component {
                         />
                     </FormGroup>
                     <Button disabled={!this.validateForm()} type="submit" className="btn-light btn-block" text="Влез"/>
-                    {/*<Button disabled={!this.validateForm()} block type="submit">Login</Button>*/}
                 </form>
             </div>
         );
@@ -83,14 +82,14 @@ export class LogIn extends Component {
 
     render(){
         return (
-            <BrowserRouter>
+            <HashRouter basename="/">
             <div className="view-container">
                 <Switch>
                     <PropsRoute path="/" exact component={LogInWrapper} loginSuccessfull={this.props.loginSuccessfull} />
                     <PropsRoute path="/login" exact component={LogInWrapper} loginSuccessfull={this.props.loginSuccessfull} />
                 </Switch>
             </div>
-        </BrowserRouter>);
+        </HashRouter>);
     }
 }
 

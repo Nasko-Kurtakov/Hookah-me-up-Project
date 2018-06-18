@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Switch} from 'react-router-dom';
+import {BrowserRouter, Switch, HashRouter} from 'react-router-dom';
 
 import {Navigation} from '../Navigation/Navigation';
 import {OrdersOverview} from '../OrdersOverview/OrdersOverview'
@@ -17,16 +17,18 @@ export class LoggedInView extends Component{
 
     render(){
         return (
-            <BrowserRouter>
+            <HashRouter basename="/">
                 <div>
                     <Navigation/>
                     <Switch>
-                        <PropsRoute path="/" exact component={OrdersOverview}/>
-                        <PropsRoute exact path={"/newOrders"} component={OrdersOverview}/>
-                        <PropsRoute exact path={"/sentOrders"} component={TakeBackView}/>
+                        <PropsRoute path={"/"} component={OrdersOverview}/>
+                        <PropsRoute path={"/page-top"} component={OrdersOverview}/>
+                        <PropsRoute path={"/newOrders"} component={OrdersOverview}/>
+                        <PropsRoute path={"/newOrders"} component={OrdersOverview}/>
+                        <PropsRoute path={"/sentOrders"} component={TakeBackView}/>
                     </Switch>
                 </div>
-            </BrowserRouter>
+            </HashRouter>
         );
     }
 }
